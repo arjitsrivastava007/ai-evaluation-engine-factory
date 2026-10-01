@@ -1,0 +1,34 @@
+[project]
+name = "ai-evaluation-engine-factory"
+version = "1.0.0"
+description = "Repeatable evaluations for RAG, chatbot, and agentic systems."
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph>=1.2,<2",
+  "fastapi>=0.115",
+  "uvicorn>=0.32",
+  "pydantic>=2.10",
+  "pydantic-settings>=2.6",
+  "python-multipart>=0.0.12",
+  "httpx>=0.27",
+  "plotly>=5.24",
+  "pypdf>=5.0",
+  "python-docx>=1.1",
+  "PyYAML>=6.0",
+  "Pillow>=10.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["eval_factory*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
