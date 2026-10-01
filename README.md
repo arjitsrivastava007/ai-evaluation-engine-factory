@@ -12,6 +12,24 @@ One workflow covers all three. Coded checks run in parallel and stay repeatable.
 
 The default provider is `heuristic`. It needs no API key, and the same input produces the same judge score. Point a run at OpenAI, Anthropic, or any OpenAI-compatible endpoint when you want a live model.
 
+## Screenshots
+
+Start a run for a RAG pipeline, a chatbot, or an agent.
+
+![Evaluation home, with the three system types and recent runs](docs/screenshots/home.png)
+
+The Solution Analyzer maps the architecture and risks, then waits for review.
+
+![Analysis review for a policy retriever](docs/screenshots/analysis.png)
+
+The metric plan is editable. Add a rule bundle or rubric, then supply, synthesize, or capture the dataset.
+
+![Metric plan and dataset preparation for a support chatbot](docs/screenshots/plan.png)
+
+Approving the plan publishes an aggregated score, a risk level, recommendations, and four Plotly charts.
+
+![Completed RAG evaluation with scores and charts](docs/screenshots/report.png)
+
 ## Run it locally
 
 Python 3.11+ and Node 20+.
