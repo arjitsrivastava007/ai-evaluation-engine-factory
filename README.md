@@ -92,3 +92,9 @@ Run the frontend dev server separately and point it at http://127.0.0.1:8000.
 - `backend/eval_factory/workflow` — LangGraph flow with the two review pauses
 - `backend/eval_factory/reporting` — Markdown report and Plotly charts
 - `frontend` — the guided review UI
+
+## Agent skill
+
+The evaluation skill uses the shared Agent Skills layout, so the same instructions load in Cursor, Codex, Antigravity, Claude Code, and Qwen Code.
+
+The source is `.agents/skills/ai-evaluation-factory/`. Cursor, Codex, and Antigravity read that directory. Claude Code and Qwen Code follow the symlinks in `.claude/skills/` and `.qwen/skills/`.
