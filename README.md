@@ -93,6 +93,12 @@ Run the frontend dev server separately and point it at http://127.0.0.1:8000.
 - `backend/eval_factory/reporting` — Markdown report and Plotly charts
 - `frontend` — the guided review UI
 
+## Design notes
+
+- [Architecture](docs/architecture.md) — the UI, API, LangGraph flow, and where a run is stored. The diagram is [docs/diagrams/architecture.svg](docs/diagrams/architecture.svg).
+- [Approach](docs/approach.md) — how the ontology, the two scoring modes, and the review pauses define a result.
+- [Design](docs/design.md) — why the saved run, not the graph checkpoint, decides the next step.
+
 ## Agent skill
 
 The evaluation skill uses the shared Agent Skills layout, so the same instructions load in Cursor, Codex, Antigravity, Claude Code, and Qwen Code.

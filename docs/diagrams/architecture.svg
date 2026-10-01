@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title desc">
+  <title id="title">AI Evaluation Engine Factory architecture</title>
+  <desc id="desc">React workspace calls FastAPI. The evaluation service stores each run and advances a LangGraph flow: analyze, plan, prepare, deterministic evaluators, LLM judges, then publish a Markdown report and four Plotly charts.</desc>
+  <style>
+    text { font-family: Figtree, "Segoe UI", sans-serif; fill: #1b1914; }
+    .label { font-size: 13px; font-weight: 650; }
+    .small { font-size: 12px; fill: #5e584f; }
+    .kicker { font-size: 11px; letter-spacing: 0.08em; fill: #b85c38; font-weight: 650; }
+  </style>
+  <rect width="1120" height="760" fill="#f3efe7"/>
+  <text x="40" y="42" class="kicker">ARCHITECTURE</text>
+  <text x="40" y="72" style="font-family: Georgia, serif; font-size: 28px;">AI Evaluation Engine Factory</text>
+
+  <rect x="40" y="100" width="200" height="72" rx="12" fill="#fbf8f3" stroke="#1b1914" stroke-width="1.5"/>
+  <text x="56" y="128" class="label">React workspace</text>
+  <text x="56" y="150" class="small">Home and run review</text>
+
+  <rect x="300" y="100" width="200" height="72" rx="12" fill="#fbf8f3" stroke="#1b1914" stroke-width="1.5"/>
+  <text x="316" y="128" class="label">FastAPI</text>
+  <text x="316" y="150" class="small">/api runs, files, report</text>
+
+  <rect x="560" y="100" width="230" height="72" rx="12" fill="#fbf8f3" stroke="#1b1914" stroke-width="1.5"/>
+  <text x="576" y="128" class="label">Evaluation service</text>
+  <text x="576" y="150" class="small">Gates the two reviews</text>
+
+  <rect x="850" y="100" width="230" height="72" rx="12" fill="#fbf8f3" stroke="#2a3f68" stroke-width="1.5"/>
+  <text x="866" y="128" class="label">LLM providers</text>
+  <text x="866" y="150" class="small">Heuristic or a live model</text>
+
+  <path d="M240 136 H300" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M500 136 H560" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M790 136 H850" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="220" width="1040" height="300" rx="16" fill="#fbf8f3" stroke="#ddd4c6"/>
+  <text x="64" y="250" class="kicker">LANGGRAPH</text>
+  <text x="64" y="274" class="label">One graph. A fresh invoke routes from the saved run and stops after analysis and after planning.</text>
+
+  <rect x="64" y="300" width="140" height="64" rx="10" fill="#1b1914"/>
+  <text x="84" y="328" class="label" fill="#f3efe7">1 Analyze</text>
+  <text x="84" y="348" class="small" fill="#ddd4c6">Architecture, risks</text>
+
+  <rect x="228" y="300" width="120" height="64" rx="10" fill="#f3efe7" stroke="#b85c38" stroke-width="1.5"/>
+  <text x="248" y="328" class="label">Review</text>
+  <text x="248" y="348" class="small">Edit, approve</text>
+
+  <rect x="372" y="300" width="140" height="64" rx="10" fill="#1b1914"/>
+  <text x="392" y="328" class="label" fill="#f3efe7">2 Plan</text>
+  <text x="392" y="348" class="small" fill="#ddd4c6">Metrics from ontology</text>
+
+  <rect x="536" y="300" width="140" height="64" rx="10" fill="#f3efe7" stroke="#b85c38" stroke-width="1.5"/>
+  <text x="556" y="328" class="label">Review</text>
+  <text x="556" y="348" class="small">Edit, approve</text>
+
+  <path d="M606 364 V382 H154 V400" fill="none" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="64" y="400" width="180" height="80" rx="10" fill="#1f4a38"/>
+  <text x="80" y="432" class="label" fill="#f3efe7">3 Prepare</text>
+  <text x="80" y="454" class="small" fill="#d7e6dc">Dataset or capture</text>
+
+  <rect x="276" y="400" width="250" height="80" rx="10" fill="#1f4a38"/>
+  <text x="292" y="432" class="label" fill="#f3efe7">Deterministic evaluators</text>
+  <text x="292" y="454" class="small" fill="#d7e6dc">Parallel. Same input, same score.</text>
+
+  <rect x="558" y="400" width="220" height="80" rx="10" fill="#2a3f68"/>
+  <text x="574" y="432" class="label" fill="#f3efe7">LLM judges</text>
+  <text x="574" y="454" class="small" fill="#d5deee">One case, one metric.</text>
+
+  <rect x="810" y="400" width="226" height="80" rx="10" fill="#b85c38"/>
+  <text x="826" y="432" class="label" fill="#fbf8f3">Publish</text>
+  <text x="826" y="454" class="small" fill="#f6e4dc">Report and four charts</text>
+
+  <path d="M204 332 H228" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M348 332 H372" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M512 332 H536" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M244 440 H276" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M526 440 H558" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M778 440 H810" stroke="#1b1914" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="556" width="330" height="150" rx="12" fill="#fbf8f3" stroke="#ddd4c6"/>
+  <text x="60" y="586" class="kicker">ONTOLOGY</text>
+  <text x="60" y="614" class="label">rag · chatbot · agentic</text>
+  <text x="60" y="640" class="small">Default components, metrics, risks,</text>
+  <text x="60" y="660" class="small">and evaluator ids. Weights sum to 1.</text>
+  <text x="60" y="680" class="small">Custom bundles and rubrics attach later.</text>
+
+  <rect x="390" y="556" width="330" height="150" rx="12" fill="#fbf8f3" stroke="#ddd4c6"/>
+  <text x="410" y="586" class="kicker">DATA</text>
+  <text x="410" y="614" class="label">Supplied, synthesized, or captured</text>
+  <text x="410" y="640" class="small">PDF, Markdown, JSON, YAML, DOCX, image.</text>
+  <text x="410" y="660" class="small">Output graph: propose, draft, validate.</text>
+  <text x="410" y="680" class="small">HTTP capture blocks metadata hosts.</text>
+
+  <rect x="740" y="556" width="340" height="150" rx="12" fill="#fbf8f3" stroke="#ddd4c6"/>
+  <text x="760" y="586" class="kicker">STORE</text>
+  <text x="760" y="614" class="label">data/{run_id}/run.json</text>
+  <text x="760" y="640" class="small">Artifacts and charts sit beside the run.</text>
+  <text x="760" y="660" class="small">API keys stay in the environment.</text>
+  <text x="760" y="680" class="small">The checkpoint does not decide the next node.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1b1914"/>
+    </marker>
+  </defs>
+</svg>
