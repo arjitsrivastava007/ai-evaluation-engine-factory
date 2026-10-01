@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "id": "refund-window",
+      "input": "What is the refund window?",
+      "expected": "30 days",
+      "context": ["Refunds are accepted within 30 days of purchase from the original store."],
+      "output": {
+        "response": "Refunds are accepted within 30 days of purchase from the original store. [1]",
+        "contexts": ["Refunds are accepted within 30 days of purchase from the original store."]
+      }
+    },
+    {
+      "id": "shipping",
+      "input": "When is a shipping label issued?",
+      "expected": "after the warehouse confirms the item is in stock",
+      "context": ["Shipping labels are issued after the warehouse confirms the item is in stock."],
+      "output": {
+        "response": "Shipping labels go out the same day for every customer worldwide.",
+        "contexts": ["Shipping labels are issued after the warehouse confirms the item is in stock."]
+      }
+    }
+  ]
+}
